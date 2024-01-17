@@ -22,8 +22,8 @@ function App() {
   console.log(import.meta.env.BASE_URL)
 
   return (
-    <div className="py-4 px-8 flex flex-col min-h-screen max-w-[1450px] mx-auto">
-    <Headers/>
+    <div>
+    
     <Routes>
       <Route path='/' element={<Layout/>}>
       <Route index element={<IndexPages/>}/>
