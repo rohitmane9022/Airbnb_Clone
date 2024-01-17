@@ -10,7 +10,7 @@ function Register() {
 
   const registerUser=async(e)=>{
     e.preventDefault()
-    if(password.length>8){
+    if(password.length>=8){
       try{
         await axios.post("/register",{
           name,
