@@ -10,19 +10,25 @@ function Register() {
 
   const registerUser=async(e)=>{
     e.preventDefault()
-    try{
-      await axios.post("/register",{
-        name,
-        email,
-        password
-      })
-  
-      alert("Successfully Register now can log in")
-      setSignupValues(true)
+    if(password.length>8){
+      try{
+        await axios.post("/register",{
+          name,
+          email,
+          password
+        })
+    
+        alert("Successfully Register now can log in")
+        setSignupValues(true)
+      }
+      catch(error){
+        alert("Register Failed, Please try again after some time")
+      }
     }
-    catch(error){
-      alert("Register Failed, Please try again after some time")
+    else{
+        alert("Please fill properly email and password")
     }
+    
     
   }
   if(SignupValues){
