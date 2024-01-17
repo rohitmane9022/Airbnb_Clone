@@ -13,8 +13,8 @@ const {setuser} = useContext(UserContext);
 
 const handleAsGuest=async(e)=>{
   e.preventDefault()
-  setemail("rohit@gmail.com")
-  setpassword("rohit")
+  setemail("tests@gmail.com")
+  setpassword("12345678")
   const {data}= await axios.post("/login",{email,password})
   setuser(data)
   alert("Login Successfully")
