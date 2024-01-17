@@ -18,7 +18,7 @@ function Register() {
           password
         })
     
-        alert("Successfully Register now can log in")
+        alert("Successfully Register")
         setSignupValues(true)
       }
       catch(error){
