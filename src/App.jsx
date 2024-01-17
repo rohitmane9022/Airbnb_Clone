@@ -2,7 +2,7 @@ import './App.css'
 import { Route,Routes } from 'react-router'
 
 import IndexPages from './components/IndexPages'
-import Layout from './Pages/Layout'
+// import Layout from './Pages/Layout'
 import Register from './Pages/Register'
 import Login from "./Pages/Login"
 import axios from 'axios'
@@ -22,11 +22,11 @@ function App() {
   console.log(import.meta.env.BASE_URL)
 
   return (
-    <div >
-    {/* <Headers/> */}
+    <div className="py-4 px-8 flex flex-col min-h-screen max-w-[1450px] mx-auto">
+    <Headers/>
     <Routes>
-      <Route path='/' element={<Layout/>}>
-      <Route index element={<IndexPages/>}/>
+      <Route path='/' element={<IndexPages/>}/>
+      
       <Route path='/register' element={<Register/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/account' element={<ProfilePage/>}/>
@@ -38,7 +38,7 @@ function App() {
       <Route path='/place/:id' element={<SinglesPages/>}/>
       
       <Route path='/account/booking/:id' element={<BookingSinglePages/>}/>
-     </Route>
+     
     </Routes>
     </div>
   )
