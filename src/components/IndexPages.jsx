@@ -30,9 +30,8 @@ function IndexPages() {
       </Link>
      ))}
      </div>
-     :<div className="m-auto flex justify-center items-center mt-20"><Loading/></div>}
+     :<Loading/>}
      
-     {/* <Loading className="m-auto"/> */}
     </div>
   )
 }
