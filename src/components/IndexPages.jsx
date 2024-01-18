@@ -1,17 +1,21 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import Loading from "../Pages/Loading"
 
 function IndexPages() {
   const [Places,setPlaces]= useState([])
+  const [Show,setShow]= useState(false)
 
   useEffect(()=>{
       axios.get("/places",).then(response=> {setPlaces(response.data.Places)})
+      setShow(true)
   },[])
-
+  
   return (
-    <div className="mt-8 grid gap-x-6 gap-y-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-     {Places.length > 0 && Places.map(place=>(
+    <div >
+      {Show?<div
+      className="mt-8 grid gap-x-6 gap-y-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">{Places.length > 0 && Places.map(place=>(
       <Link key={place._id} to={"/place/"+place._id}>
        <div className="bg-gray-500 rounded-2xl mb-2 flex">
        {place.photos?.[0] &&(
@@ -25,6 +29,10 @@ function IndexPages() {
         </div>
       </Link>
      ))}
+     </div>
+     :<div className="m-auto flex justify-center items-center mt-20"><Loading/></div>}
+     
+     {/* <Loading className="m-auto"/> */}
     </div>
   )
 }
