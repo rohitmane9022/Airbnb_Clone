@@ -5,13 +5,21 @@ import { UserContext } from "../Context/UserContext"
 
 
 function login() {
-  const [email,setemail]= useState("")
-  const [password,setpassword]=useState("")
-  const [redirect,setredirect]= useState(false)
-const {setuser} = useContext(UserContext)
+  const [email,setemail]= useState("");
+  const [password,setpassword]=useState("");
+  const [redirect,setredirect]= useState(false);
+const {setuser} = useContext(UserContext);
 
 
-
+const handleAsGuest=async(e)=>{
+  e.preventDefault()
+  setemail("tests@gmail.com")
+  setpassword("12345678")
+  const {data}= await axios.post("/login",{email,password})
+  setuser(data)
+  alert("Login Successfully")
+       setredirect(true)
+}
 
   const LoginUser=async(e)=>{
    
@@ -35,6 +43,9 @@ const {setuser} = useContext(UserContext)
        alert("Login Successfully")
        setredirect(true)
      }
+      
+     
+      
     }
     catch(error){
       alert("Please provide both email and password")
