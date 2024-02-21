@@ -8,7 +8,7 @@ export default function PlaceImg({place,index=0,className=null}) {
   
   return (
    
-      <img className="h-full" src={"https://backend-airbnb-w6ay.onrender.com/uploads/"+place.photos[index]}/>
+      <img className="h-full" src={"https://vast-plum-squid-yoke.cyclic.app/uploads/"+place.photos[index]}/>
   
   )
 }
