@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import { UserContext } from "../Context/UserContext"
 import { Navigate, useParams } from "react-router"
-import { Link } from "react-router-dom"
+
 import axios from "axios"
 import PlacePage from "./PlacePage"
 import AccountNavigation from "./AccountNavigation"

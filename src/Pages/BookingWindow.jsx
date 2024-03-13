@@ -45,15 +45,15 @@ export default function BookingWindow({Place}) {
   return (
     
        <div className="bg-neutral-50 text-center p-4 rounded-2xl">
-          <div className="text-2xl">Price: ₹{Place.Price} / per night
+          <div className="text-lg sm:text-2xl">Price: ₹{Place.Price} / per night
           </div>
           <div className="border rounded-2xl mt-4">
-            <div className="flex">
-            <div className="py-3 px-4">
+            <div className="flex-row sm:flex">
+            <div className="py-3 px-4 ">
             <label>Check in: </label>
             <input type="date" value={checkIn} onChange={e=> setcheckIn(e.target.value)}/>
           </div>
-          <div className="py-3 px-4 border-l">
+          <div className="py-3 px-4 border border-t-1 sm:border-l">
             <label>Check out: </label>
             <input type="date" value={checkOut} onChange={e=> setcheckOut(e.target.value)}/>
           </div>

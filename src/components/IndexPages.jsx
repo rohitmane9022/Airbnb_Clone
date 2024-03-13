@@ -14,8 +14,9 @@ function IndexPages() {
   
   return (
     <div >
-      {Show?<div
-      className="mt-8 grid gap-x-6 gap-y-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">{Places.length > 0 && Places.map(place=>(
+      {Show?
+      <div className="mt-8 grid gap-x-6 gap-y-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {Places.length > 0 && Places.map(place=>(
       <Link key={place._id} to={"/place/"+place._id}>
        <div className="bg-gray-500 rounded-2xl mb-2 flex">
        {place.photos?.[0] &&(

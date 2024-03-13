@@ -13,7 +13,7 @@ import PlaceForm from './Pages/PlaceForm'
 import SinglesPages from './Pages/SinglesPages'
 import BookingPages from './Pages/BookingPages'
 import BookingSinglePages from './Pages/BookingSinglePages'
-import Headers from './components/Headers'
+
 
 axios.defaults.baseURL="https://vast-plum-squid-yoke.cyclic.app"
 axios.defaults.withCredentials=true

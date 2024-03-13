@@ -48,19 +48,27 @@ function PlaceForm() {
 
   const savePlace= async(e)=>{
     e.preventDefault()
-    const placeData={
-      title,address,addedPhotos,description,perks,extraInfo,checkIn,checkOut,maxGuest,Price
-    }
-    if(id){
-      await axios.put("/place", {id,...placeData})
-      setredirect(true)
+
+    if(title==="" ||address===""  || description==="" || perks==="" || extraInfo=="" || checkIn==="" || checkOut==="" || maxGuest==="" ||Price==="")
+    {
+      alert("please fill the form perfectly ")
     }
     else{
-
-      await axios.post("/place", placeData)
-      setredirect(true)
-      
+      const placeData={
+        title,address,addedPhotos,description,perks,extraInfo,checkIn,checkOut,maxGuest,Price
+      }
+      if(id){
+        await axios.put("/place", {id,...placeData})
+        setredirect(true)
+      }
+      else{
+  
+        await axios.post("/place", placeData)
+        setredirect(true)
+        
+      }
     }
+   
     
 
   }
